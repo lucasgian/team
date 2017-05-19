@@ -1,0 +1,36 @@
+<?php
+$config['map'] = array(
+    'Role' => 'User/role_id',
+);
+
+$config['alias'] = array(
+    'Role/1' => 'Role/admin',
+    'Role/2' => 'Role/editor',
+);
+
+
+$config['roles'] = array(
+    'Role/admin'   => null,
+    'Role/editor' => null,
+);
+
+
+$config['rules'] = array(
+    'allow' => array(
+        '*' => 'Role/admin, Role/editor',
+    ),
+    'deny' => array(
+        //'controllers/roles/view' => 'Role/admin'
+    ),
+);
+
+$config['rules'] = array(
+    'allow' => array(
+        '*' => 'Role/admin, Role/editor',
+    ),
+    'deny' => array(
+        'controllers/roles/add' => 'Role/admin'
+    ),
+);
+
+?>
